@@ -2,6 +2,7 @@
 
 import pytest
 
+import tantrumpy
 from tantrumpy import picker
 from tantrumpy.handler import _handler
 
@@ -12,7 +13,9 @@ def reset_state():
     picker.reset()
     _handler.disable()
     _handler._fired = False
+    tantrumpy._custom_banks.clear()
     yield
     _handler.disable()
     _handler._fired = False
     picker.reset()
+    tantrumpy._custom_banks.clear()

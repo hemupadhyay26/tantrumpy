@@ -13,10 +13,11 @@ import os
 import signal
 import sys
 import types
-from typing import Any, Callable, Dict, List, Optional
+from typing import Any, Callable, Dict, Optional
 
 from tantrumpy import picker as _picker
 from tantrumpy.colors import colorize
+from tantrumpy.messages import MoodBank
 
 
 class TantrumHandler:
@@ -27,7 +28,7 @@ class TantrumHandler:
         self._fired = False
         self._mood = "random"
         self._verbose = False
-        self._custom: Optional[Dict[str, List[str]]] = None
+        self._custom: Optional[Dict[str, MoodBank]] = None
 
         # Saved originals for clean restore on disable()
         self._orig_sigint: Any = signal.SIG_DFL
@@ -42,7 +43,7 @@ class TantrumHandler:
         self,
         mood: str = "random",
         verbose: bool = False,
-        custom: Optional[Dict[str, List[str]]] = None,
+        custom: Optional[Dict[str, MoodBank]] = None,
     ) -> None:
         """Register all exit hooks."""
         self._mood = mood

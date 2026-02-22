@@ -96,7 +96,7 @@ def test_enable_with_specific_mood():
 
 def test_enable_with_custom_messages(monkeypatch):
     monkeypatch.delenv("TANTRUMPY_SILENT", raising=False)
-    custom = {"test_mood": ["Custom message here."]}
+    custom = {"test_mood": {"emoji": "", "messages": ["Custom message here."]}}
     _handler.enable(mood="test_mood", custom=custom)
     _handler._fired = False
 

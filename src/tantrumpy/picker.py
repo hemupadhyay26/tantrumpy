@@ -6,7 +6,7 @@ Picks a random message from a mood's bank with no immediate repeats.
 import random
 from typing import Dict, List, Optional
 
-from tantrumpy.messages import MESSAGES, MOOD_EMOJIS
+from tantrumpy.messages import MOODS, MoodBank
 
 # Per-session shuffle queues: mood -> shuffled list of indices
 _queues: Dict[str, List[int]] = {}
@@ -16,17 +16,20 @@ _registry: Dict[str, List[str]] = {}
 _emoji_registry: Dict[str, str] = {}
 
 
-def _build_registry(custom: Optional[Dict[str, List[str]]] = None) -> None:
-    """Merge built-in messages with any custom mood messages."""
+def _build_registry(custom: Optional[Dict[str, MoodBank]] = None) -> None:
+    """Merge built-in messages with any custom mood banks."""
     global _registry, _emoji_registry
-    _registry = {mood: list(msgs) for mood, msgs in MESSAGES.items()}
-    _emoji_registry = dict(MOOD_EMOJIS)
+    _registry = {mood: list(bank["messages"]) for mood, bank in MOODS.items()}
+    _emoji_registry = {mood: bank["emoji"] for mood, bank in MOODS.items()}
     if custom:
-        for mood, msgs in custom.items():
+        for mood, bank in custom.items():
             if mood in _registry:
-                _registry[mood].extend(msgs)
+                _registry[mood].extend(bank["messages"])
+                if bank["emoji"]:
+                    _emoji_registry[mood] = bank["emoji"]
             else:
-                _registry[mood] = list(msgs)
+                _registry[mood] = list(bank["messages"])
+                _emoji_registry[mood] = bank["emoji"]
 
 
 def _get_queue(mood: str) -> List[int]:
@@ -38,7 +41,7 @@ def _get_queue(mood: str) -> List[int]:
     return _queues[mood]
 
 
-def pick(mood: str, custom: Optional[Dict[str, List[str]]] = None) -> str:
+def pick(mood: str, custom: Optional[Dict[str, MoodBank]] = None) -> str:
     """
     Pick a random message for the given mood.
 
