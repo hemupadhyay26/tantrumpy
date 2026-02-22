@@ -2,6 +2,7 @@
 Message selection logic for tantrumpy.
 Picks a random message from a mood's bank with no immediate repeats.
 """
+
 import random
 from typing import Dict, List, Optional
 
@@ -56,9 +57,7 @@ def pick(mood: str, custom: Optional[Dict[str, List[str]]] = None) -> str:
         mood = random.choice(list(_registry.keys()))
 
     if mood not in _registry:
-        raise ValueError(
-            f"Unknown mood: '{mood}'. Available: {list(_registry.keys())}"
-        )
+        raise ValueError(f"Unknown mood: '{mood}'. Available: {list(_registry.keys())}")
 
     queue = _get_queue(mood)
     idx = queue.pop(0)

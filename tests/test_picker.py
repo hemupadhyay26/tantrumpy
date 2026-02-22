@@ -1,4 +1,5 @@
 """Tests for tantrumpy/picker.py — selection logic."""
+
 import pytest
 
 from tantrumpy import picker

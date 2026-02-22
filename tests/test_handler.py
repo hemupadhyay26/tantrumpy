@@ -1,4 +1,5 @@
 """Tests for tantrumpy/handler.py — hook wiring and fire logic."""
+
 import os
 import signal
 import sys

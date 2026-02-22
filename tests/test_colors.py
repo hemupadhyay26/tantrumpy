@@ -1,4 +1,5 @@
 """Tests for tantrumpy/colors.py — ANSI color support and fallback."""
+
 import sys
 from unittest.mock import patch
 

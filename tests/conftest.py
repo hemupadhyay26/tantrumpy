@@ -1,4 +1,5 @@
 """Shared fixtures for tantrumpy tests."""
+
 import pytest
 
 from tantrumpy import picker

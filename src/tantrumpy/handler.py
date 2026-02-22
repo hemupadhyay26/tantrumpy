@@ -7,6 +7,7 @@ Hooks registered:
   - atexit         (sys.exit / normal end)
   - sys.excepthook (unhandled exceptions)
 """
+
 import atexit
 import os
 import signal

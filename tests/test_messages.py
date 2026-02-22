@@ -1,4 +1,5 @@
 """Tests for tantrumpy/messages.py — message bank integrity."""
+
 from tantrumpy.messages import MESSAGES, MOOD_EMOJIS
 
 REQUIRED_MOODS = {"frustrated", "rude", "comic", "cringe", "philosophy", "dramatic"}
@@ -23,9 +24,7 @@ def test_no_empty_messages():
 
 def test_no_duplicate_messages_within_mood():
     for mood, msgs in MESSAGES.items():
-        assert len(msgs) == len(set(msgs)), (
-            f"Duplicate messages found in mood '{mood}'"
-        )
+        assert len(msgs) == len(set(msgs)), f"Duplicate messages found in mood '{mood}'"
 
 
 def test_all_moods_have_emoji():

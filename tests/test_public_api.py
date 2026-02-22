@@ -1,4 +1,5 @@
 """Tests for tantrumpy/__init__.py — public API surface."""
+
 from unittest.mock import patch
 
 import pytest

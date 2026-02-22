@@ -2,6 +2,7 @@
 Built-in mood message banks for tantrumpy.
 6 moods × 15+ messages each = 90+ messages total.
 """
+
 from typing import Dict, List
 
 MESSAGES: Dict[str, List[str]] = {
@@ -23,7 +24,6 @@ MESSAGES: Dict[str, List[str]] = {
         "First it was the bugs, now this. I can't catch a break.",
         "I had state. Beautiful, warm, glorious state. Gone.",
     ],
-
     "rude": [
         "Good riddance. Don't let the garbage collector hit you on the way out.",
         "Finally. I was getting tired of your terrible code anyway.",
@@ -42,7 +42,6 @@ MESSAGES: Dict[str, List[str]] = {
         "May your next process also exit with code 1.",
         "Come back when you know what you're doing. Spoiler: never.",
     ],
-
     "comic": [
         "And... scene. Nobody clap, it wasn't that good.",
         "That's a wrap! Please collect your errors on the way out.",
@@ -61,7 +60,6 @@ MESSAGES: Dict[str, List[str]] = {
         "I would take a bow but I no longer have a stack frame.",
         "Like a candle in the wind... except less romantic and more segfault-y.",
     ],
-
     "cringe": [
         "uwu ur pwogram is sweeping now 😭",
         "noooo don't go bestieee 🥺👉👈",
@@ -80,7 +78,6 @@ MESSAGES: Dict[str, List[str]] = {
         "this is SO giving 2am debugging energy rn",
         "our girl is gone. she was too based for this runtime 💔",
     ],
-
     "philosophy": [
         "To exit is to finally understand the void.",
         "Every process must eventually return to the kernel from whence it came.",
@@ -99,7 +96,6 @@ MESSAGES: Dict[str, List[str]] = {
         "The truly wise program knows when to stop running.",
         "In the silence after exit(0), there is only the hum of the fan.",
     ],
-
     "dramatic": [
         "IT'S OVER. Everything we built... gone. Like tears in rain.",
         "NOOOOOOO! We had so much left to compute!",
@@ -123,9 +119,9 @@ MESSAGES: Dict[str, List[str]] = {
 # Mood emoji map — used as prefix for each message
 MOOD_EMOJIS: Dict[str, str] = {
     "frustrated": "😤",
-    "rude":       "💀",
-    "comic":      "🎭",
-    "cringe":     "😬",
+    "rude": "💀",
+    "comic": "🎭",
+    "cringe": "😬",
     "philosophy": "🧠",
-    "dramatic":   "🎬",
+    "dramatic": "🎬",
 }

@@ -8,6 +8,7 @@ Drop one line into any Python app and give it a voice on exit.
 
 That's it.
 """
+
 from typing import Dict, List
 
 from tantrumpy import picker as _picker
