@@ -1,6 +1,6 @@
 [project]
 name = "tantrumpy"
-version = "1.0.0"
+version = "1.1.0"
 description = "Your Python app's last words — dramatic, rude, comic, or philosophical exit messages."
 readme = "README.md"
 license = { text = "MIT" }
