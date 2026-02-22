@@ -2,7 +2,7 @@
 import sys
 from unittest.mock import patch
 
-from tantrumpy.colors import colorize, supports_color, MOOD_COLORS, RESET
+from tantrumpy.colors import MOOD_COLORS, RESET, colorize, supports_color
 
 
 def test_supports_color_false_when_not_tty():

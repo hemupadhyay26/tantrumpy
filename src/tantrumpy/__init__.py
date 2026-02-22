@@ -10,10 +10,10 @@ That's it.
 """
 from typing import Dict, List
 
-from tantrumpy.handler import _handler
 from tantrumpy import picker as _picker
+from tantrumpy.handler import _handler
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 __all__ = ["enable", "disable", "add_messages"]
 
 # Internal custom mood storage

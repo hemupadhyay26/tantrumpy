@@ -1,10 +1,11 @@
 """Tests for tantrumpy/__init__.py — public API surface."""
-import pytest
 from unittest.mock import patch
 
+import pytest
+
 import tantrumpy
-from tantrumpy.handler import _handler
 from tantrumpy import _custom_messages
+from tantrumpy.handler import _handler
 
 
 def test_enable_activates_handler():

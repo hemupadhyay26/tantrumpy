@@ -1,6 +1,6 @@
 [project]
 name = "tantrumpy"
-version = "0.1.0"
+version = "1.0.0"
 description = "Your Python app's last words — dramatic, rude, comic, or philosophical exit messages."
 readme = "README.md"
 license = { text = "MIT" }
@@ -33,6 +33,7 @@ Issues = "https://github.com/hemupadhyay26/tantrumpy/issues"
 dev = [
     "pytest>=8.0",
     "pytest-cov>=5.0",
+    "ruff>=0.15.2",
 ]
 
 [build-system]
